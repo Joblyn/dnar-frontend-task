@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$dark: #17151d;
+$light-dark: #241f2a;
+$purple: #7d30f5;
+$blue: #3f6eff;
+$white: #ffffff;
+$off-white: #f6f0fe;
+$green: #79e02c;
+$gray: #9f9f9f;
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  background-color: $dark !important;
+}
+* {
+  box-sizing: border-box;
+}
+.cl-blue {
+  color: $blue;
+}
+.cl-green {
+  color: $green;
+}
+.cl-white {
+  color: $white;
+}
+.cl-off-white {
+  color: $off-white;
+}
+.bg-light-dark {
+  background-color: $light-dark;
+}
+.bd {
+  border: 1px solid $light-dark !important;
+}
+.bd-radius-lg {
+  border-radius: 15px;
+}
+.bd-radius-sm {
+  border-radius: 10px;
+}
+.app {
+  min-height: 100%;
+}
+.side-nav {
+  width: 70px;
+  height: 90vh;
+
+  :hover {
+    .nav-link {
+      color: $white !important;
+    }
+  }
+
+  div:nth-of-type(1) {
+    height: 60px;
+  }
+
+  div:nth-of-type(2) {
+    height: 90%;
+  }
+  .nav-link {
+    background-color: transparent;
+    color: $white;
+    height: calc(60px - 0.5rem);
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $blue;
+      color: $white !important;
+    }
+    &:focus {
+      color: $white !important;
+    }
+  }
+
+  .nav-link.active {
+    background-color: $blue;
+  }
+}
+.search-cont {
+  width: 100%;
+  max-width: 1000px;
+  font-weight: bold;
+
+  input {
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    color: $white!important;
+
+    &:focus,
+    &:focus-visible {
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
+    &::placeholder, &::-webkit-input-placeholder {
+      color: $white;
+    }
+  }
+}
+.info {
+  width: 100%;
+  min-height: 100vh;
+}
+.custom-card {
+  background-color: $light-dark;
+  color: $white;
+  
+  h3 {
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  >div {
+    height: 250px;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar{
+      width: 0px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray;
+      border-radius: 10px;
+    }
+
+  }
+}
+.small-card {
+  background-color: $purple;
+  position: relative;
+  
+  .before {
+    width: 2px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left:-2px;
+    background-color: $gray;
+  }
+}
+.text-xsm {
+  font-size: 12px;
+}
+.text-md {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.text-sm {
+  font-size: 18px;
+}
+.coin-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+}
+.text-body {
+  // height:50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
