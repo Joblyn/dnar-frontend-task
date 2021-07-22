@@ -16,6 +16,13 @@ body {
 * {
   box-sizing: border-box;
 }
+.page-spinner {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cl-blue {
   color: $blue;
 }
@@ -45,7 +52,6 @@ body {
 }
 .side-nav {
   width: 70px;
-  height: 90vh;
 
   :hover {
     .nav-link {
@@ -89,7 +95,7 @@ body {
     font-weight: 500;
     border: none;
     background-color: transparent;
-    color: $white!important;
+    color: $white !important;
 
     &:focus,
     &:focus-visible {
@@ -97,7 +103,8 @@ body {
       background-color: transparent;
       box-shadow: none;
     }
-    &::placeholder, &::-webkit-input-placeholder {
+    &::placeholder,
+    &::-webkit-input-placeholder {
       color: $white;
     }
   }
@@ -109,36 +116,68 @@ body {
 .custom-card {
   background-color: $light-dark;
   color: $white;
-  
+
   h3 {
     font-weight: 600;
     letter-spacing: 1px;
   }
-  >div {
+  > .inner {
     height: 250px;
     overflow-y: auto;
-    
-    &::-webkit-scrollbar{
+
+    &::-webkit-scrollbar {
       width: 0px;
       background-color: transparent;
     }
-    &::-webkit-scrollbar-thumb {
-      background-color: $gray;
-      border-radius: 10px;
+  }
+  .card-body-event {
+    height: 100%;
+    @media(max-width: 600px) {
+      height: fit-content;
+      display: flex;
+      flex-direction: row;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+    
+    }
+  }
+  .event-card {
+    height: fit-content;
+    position: relative;
+    
+    .link-icon {
+     font-size: 25px;
+     background-color: $dark;
+     border-radius: 10px;
+     color: $blue;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: .45rem;
+     width: fit-content;
+     position: absolute;
+     right: 10px;
+     bottom: 2px;
     }
 
+    @media (max-width: 600px) {
+      width: 100px;
+    }
   }
 }
 .small-card {
   background-color: $purple;
   position: relative;
-  
+
   .before {
     width: 2px;
     height: 15px;
     position: absolute;
     top: 15px;
-    left:-2px;
+    left: -2px;
     background-color: $gray;
   }
 }
@@ -151,16 +190,21 @@ body {
   letter-spacing: 1px;
 }
 .text-sm {
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: 500;
 }
 .coin-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  // grid-gap: 10px;
 }
-.text-body {
-  // height:50px;
-  white-space: nowrap;
+.text {
+  // white-space: nowrap;
+  font-size: 0.85rem;
+  line-height: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }

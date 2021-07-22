@@ -8,6 +8,6 @@ Card.Header = function Header({children}) {
   return <h3 className="p-3">{children}</h3>
 }
 
-Card.Body = function Body({children, style}) {
-  return <div className="p-3" style={style}>{children}</div>
+Card.Body = function Body({className,children, style}) {
+  return <div className={`p-3 ${className}`} style={style}>{children}</div>
 }
