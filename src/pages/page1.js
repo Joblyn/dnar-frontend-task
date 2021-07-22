@@ -30,7 +30,7 @@ export default function Page1() {
     if(state) {
       let ids = state.coinMarkets.slice(0,5).map(coin => coin.id);
       for(var i = 0; i<ids.length; i++ ) {
-        dispatch(getCoinMarketChart(`/coins/${i}/market_chart`));
+        // dispatch(getCoinMarketChart(`/coins/${i}/market_chart`));
       }
     }
   }, [state]);

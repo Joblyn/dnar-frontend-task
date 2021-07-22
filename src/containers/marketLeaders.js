@@ -16,9 +16,9 @@ export default function MarketLeaders({ coins }) {
                 key={id}
               >
                 <span className="before"></span>
-                <span style={{fontSize: '1.3rem', fontWeight: 600}}>{`${coin.name} (${coin.symbol})`}</span>
+                <span style={{fontSize: '1.2rem', fontWeight: 600}}>{`${coin.name} (${coin.symbol})`}</span>
                 <span className="d-flex flex-row align-items-center">
-                  <span className="cl-green">------------------------</span>
+                  <span className="cl-green dash">---------------</span>
                   <span className="text-xsm cl-green">{price_change_24h}</span>
                 </span>
                 <span className="text-md">${`${current_price}`}</span>
