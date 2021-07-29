@@ -1,13 +1,18 @@
 import { baseUrl } from "../constants/apiConstants";
 
-export const getData = (url, done) => {
+export const getData = (url, done, id = null) => {
   const endpoint = baseUrl + url;
+  console.log(endpoint);
   return (dispatch) => {
     fetch(endpoint, {
-      method: 'GET',
+      method: "GET"
     })
-    .then(res => res.json())
-    .then(data => dispatch(done(data)))
-    .catch(err => alert('Unable to fetch. Please check internet connection and try again.'))
-  }
-}
+      .then((res) => res.json())
+      .then((data) => dispatch(done(data, id)))
+      .catch((err) =>
+        alert(
+          "Unable to fetch. Please check internet connection and try again."
+        )
+      );
+  };
+};

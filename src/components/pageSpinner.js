@@ -5,7 +5,7 @@ import { Spinner } from 'reactstrap';
 const PageSpinner = () => {
   return (
     <div className="page-spinner">
-      <Spinner style={{color: "#7d30f5", fontSize: '1.5rem'}}/>
+      <Spinner style={{color: "#7d30f5", fontSize: '1.5rem'}}> </Spinner>
     </div>
   );
 };

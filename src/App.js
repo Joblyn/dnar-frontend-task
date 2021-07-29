@@ -11,7 +11,7 @@ function App() {
     <Container fluid className="p-3 d-flex flex-row app">
       <Router>
         <SideNav />
-        <div className="info my-2 mx-3">
+        <div className="info">
           <Switch>
             <Route exact path={ROUTES.PAGE1} component={Page1} />
             <Route path={ROUTES.PAGE2} component={Page2} />

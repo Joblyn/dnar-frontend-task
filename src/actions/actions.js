@@ -1,33 +1,34 @@
-import * as ActionTypes from './types';
-import { getData } from './services';
+import * as ActionTypes from "./types";
+import { getData } from "./services";
 
-export const getCoinPrices = url => {
+export const getCoinPrices = (url) => {
   return getData(url, onGetCoinPrices);
-}
-const onGetCoinPrices = payload => {
+};
+const onGetCoinPrices = (payload) => {
   return {
     type: ActionTypes.GET_COIN_PRICES,
     payload
-  }
-}
+  };
+};
 
-export const getCoinMarkets = url => {
+export const getCoinMarkets = (url) => {
   return getData(url, onGetCoinMarkets);
-}
+};
 
-const onGetCoinMarkets = payload => {
+const onGetCoinMarkets = (payload) => {
   return {
     type: ActionTypes.GET_COIN_MARKETS,
     payload
-  }
-}
+  };
+};
 
-export const getCoinMarketChart = url => {
-  return getData(url, onGetCoinMarketChart);
-}
-const onGetCoinMarketChart = payload => {
+export const getCoinMarketChart = (url, id) => {
+  return getData(url, onGetCoinMarketChart, id);
+};
+const onGetCoinMarketChart = (payload, id) => {
   return {
     type: ActionTypes.GET_COIN_MARKET_CHART,
-    payload
-  }
-}
+    payload,
+    id
+  };
+};

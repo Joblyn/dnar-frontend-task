@@ -8,6 +8,7 @@ $white: #ffffff;
 $off-white: #f6f0fe;
 $green: #79e02c;
 $gray: #9f9f9f;
+$red: #ee0909;
 
 body {
   font-family: "Roboto", sans-serif !important;
@@ -35,6 +36,9 @@ body {
 .cl-off-white {
   color: $off-white;
 }
+.cl-red {
+  color: $red;
+}
 .bg-light-dark {
   background-color: $light-dark;
 }
@@ -52,6 +56,13 @@ body {
 }
 .side-nav {
   width: 70px;
+  position: relative;
+  
+  @media (max-width: 600px) {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+  }
 
   :hover {
     .nav-link {
@@ -61,10 +72,23 @@ body {
 
   div:nth-of-type(1) {
     height: 60px;
+    width: 70px;
   }
 
   div:nth-of-type(2) {
     height: 90%;
+    transition: all 0.2s ease;
+    top: 80px;
+    width:70px;
+    
+    @media (max-width: 600px) {
+      position: absolute;
+      left: -200px;
+      &.show-nav {
+        left: 0px;
+        z-index: 10;
+      }
+    }
   }
   .nav-link {
     background-color: transparent;
@@ -90,6 +114,11 @@ body {
   max-width: 1000px;
   font-weight: bold;
 
+  @media (max-width: 600px) {
+    width: calc(100%-70px);
+    margin-left:  70px;
+  }
+
   input {
     font-size: 15px;
     font-weight: 500;
@@ -112,6 +141,11 @@ body {
 .info {
   width: 100%;
   min-height: 100vh;
+  position: relative;
+  margin: .5rem 1rem;
+  @media (max-width: 600px) {
+    margin: .5rem 0;
+  }
 }
 .custom-card {
   background-color: $light-dark;
@@ -132,7 +166,7 @@ body {
   }
   .card-body-event {
     height: 100%;
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       height: fit-content;
       display: flex;
       flex-direction: row;
@@ -140,33 +174,31 @@ body {
       overflow-x: scroll;
       .event-card {
         width: 200px;
-        margin: 0 3px
+        margin: 0 3px;
       }
 
       &::-webkit-scrollbar {
         width: 0px;
       }
-    
     }
   }
   .event-card {
     height: fit-content;
     position: relative;
 
-
     .link-icon {
-     font-size: 25px;
-     background-color: $dark;
-     border-radius: 10px;
-     color: $blue;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: .45rem;
-     width: fit-content;
-     position: absolute;
-     right: 10px;
-     bottom: 2px;
+      font-size: 25px;
+      background-color: $dark;
+      border-radius: 10px;
+      color: $blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.45rem;
+      width: fit-content;
+      position: absolute;
+      right: 10px;
+      bottom: 2px;
     }
 
     @media (max-width: 600px) {
@@ -193,7 +225,7 @@ body {
 .text-md {
   font-size: 25px;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   @media (max-width: 800px) {
     font-size: 20px;
   }
@@ -219,7 +251,7 @@ body {
 }
 
 .dash {
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     display: none;
   }
 }
